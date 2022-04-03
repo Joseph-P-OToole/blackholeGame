@@ -1,0 +1,320 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: none;
+  background: none;
+}
+
+::-moz-selection {
+  color: none;
+  background: none;
+}
+
+body{
+  width: 100%;
+  background: #000;
+  position: fixed;
+  font-family: 'Play', sans-serif;
+}
+
+#music {
+  display: none;
+}
+
+#soundEffect {
+  display: none;
+}
+
+#gameSoundEffect {
+  display: none;
+}
+
+#cover {
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: absolute;
+  background: #000;
+}
+
+#startScreen {
+  width: 100%;
+  height: 100vh;
+  min-height: 950px;
+  position: absolute;
+  background: #000;
+  font-size: 2.1em;
+  color: #000;
+  padding: 5%;
+  text-align: left;
+  z-index: 6;
+  display: none;
+}
+
+#backStory {
+  font-size: 1.2em;
+}
+
+#rulesScreen {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: #000;
+  font-size: 2.1em;
+  color: #181;
+  padding: 5%;
+  z-index: 6;
+  display: none;
+}
+
+  #rulesScreen p{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+  }
+
+.buttons {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 80%;
+  justify-content: space-between;
+  align-items: center;
+  margin: -5%;
+  padding: 5%;
+}
+
+.startButton {
+  width: 300px;
+  height: 100px;
+  background: #000;
+  border: 2px solid #424;
+  border-radius: 10px;
+  font-family: 'Play', sans-serif;
+  font-size: 1em;
+  color: #181;
+}
+
+.startLogo {
+  height: 150px;
+  width: 500px;
+}
+
+.rulesButton {
+  width: 300px;
+  height: 100px;
+  background: #000;
+  border: 2px solid #424;
+  border-radius: 10px;
+  font-family: 'Play', sans-serif;
+  font-size: 1em;
+  color: #181;
+}
+
+#restartButton {
+  width: 300px;
+  height: 75px;
+  position: absolute;
+  top: calc(100% - 90px);
+  left: calc(50% - 150px);
+  background: #000;
+  border: 2px solid #424;
+  border-radius: 10px;
+  font-family: 'Play', sans-serif;
+  font-size: 1em;
+  color: #181;
+}
+
+#backStory {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#backStory:after {
+  content: "|";
+  animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@-moz-keyframes blink {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes blink {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+#endScreen {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  left: calc(50% - 300px);
+  top: calc(50% + 250px);
+  background: #0008;
+  padding: 2%;
+  border: 5px solid #424;
+  border-radius: 25px;
+  z-index: 10;
+  display: none;
+  font-size: 2.7em;
+  font-weight: 700;
+  text-shadow: 1px 1px 7px #0004;
+  color: #181;
+  text-align: center;
+}
+
+.stats {
+  width: 600px;
+  height: 100px;
+  font-size: 2.7em;
+  font-weight: 700;
+  text-shadow: 1px 1px 7px #0004;
+  color: #181;
+}
+
+#animationCanvas {
+  position: absolute;
+  top: 5%;
+  left: calc(50% - 600px);
+  z-index: 4;
+  margin-top: 94px;
+  border: 5px solid #424;
+  border-radius: 8px;
+}
+
+#HUD {
+  width: 1210px;
+  min-height: 100px;
+  top: 10px;
+  left: calc(50% - 600px);
+  position: absolute;
+  z-index: 5;
+  background: linear-gradient(#111, #000);
+  border-bottom: 2px solid #424;
+  border-top: 5px solid #424;
+  border-left: 5px solid #424;
+  border-right: 5px solid #424;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 2.7em;
+  font-weight: 700;
+  text-shadow: 1px 1px 7px #0004;
+  color: #181;
+  cursor: none;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#score {
+  width: 400px;
+  display: flex;
+  justify-content: left;
+}
+
+.logo {
+  height: 100px;
+  width: 400px;
+  background: url("../assets/images/logo.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#level {
+  text-align: right;
+  width: 400px;
+}
+
+#background {
+  position: absolute;
+  margin-top: 100px;
+  left: calc(50% - 600px);
+  z-index: 1;
+  width: 1205px;
+  height: 800px;
+  overflow: hidden;
+}
+
+#backgroundImg {
+  animation: rotate 160s linear infinite;
+  position: absolute;
+  left: -165%;
+  top: -145%;
+  size: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  #startScreen{
+    zoom: 0.9;
+    height: 120vh;
+  }
+  #rulesScreen{
+    zoom: 0.9;
+    height: 120vh;
+  }
+}
+@media only screen and (max-height: 860px){
+  #startScreen{
+    zoom: 0.9;
+    height: 120vh;
+  }
+  #rulesScreen{
+    zoom: 0.9;
+    height: 120vh;
+  }
+}
+@media only screen and (max-width: 906px){
+  #startScreen{
+    zoom: 0.8;
+    height: 100vh;
+  }
+  #rulesScreen{
+    zoom: 0.8;
+    height: 120vh;
+  }
+}
+@media only screen and (max-height: 780px){
+  #startScreen{
+    zoom: 0.8;
+    height: 135vh;
+  }
+  #rulesScreen{
+    zoom: 0.8;
+    height: 135vh;
+  }
+}
+@media only screen and (max-height: 670px){
+  #startScreen{
+    zoom: 0.7;
+    height: 135vh;
+  }
+  #rulesScreen{
+    zoom: 0.7;
+    height: 145vh;
+  }
+}

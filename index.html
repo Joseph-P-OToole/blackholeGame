@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./assets/images/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackHole</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Play&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <audio id="music" src="" controls="none"></audio>
+  <audio id="soundEffect" src="" controls="none"></audio>
+  <audio id="gameSoundEffect" src="" controls="none"></audio>
+  <div id="cover"></div>
+  <div id="startScreen">
+    <pre id="backStory">
+      <span>-CAPTAINS LOG-</span><br>
+      <span>05/06/2031 06:00:00<br></span>
+      <span>OPERATION GIFT BASKET WAS A SUCCESS...</span><br>
+      <span>UPON DEPARTURE OF UT-772 A THRUSTER MALFUNCTION WAS DETECTED...<br></span>
+      <span>OUR TRAJECTORY WAS SEVERELY ALTERED BY THE MALFUNCTION...</span><br>
+      <span>WE CAN ONLY APPLY POWER FOR SHORT BURSTS...<br></span> 
+      <span>OUR SHIP IS HEADING TOWARD A BLACKHOLE...</span><br>
+      <span>CAUGHT IN THE OUTER RIM WITH LIMITED FUEL SUPPLY...<br></span>
+      <span>WE MUST AVOID APPROACHING ASTEROIDS AND CONSERVE FUEL...</span><br>
+      <span>REFUEL SUPPLIES ARE ON THEIR WAY BUT...<br></span>
+      <span>MY CREW FEARS THE WORST...</span><br>
+      <span>I WILL NOT GO WITHOUT A FIGHT...</span>
+    </pre>
+    <div class="buttons">
+      <button class="startButton"
+      onclick="StartGame()">START GAME</button>
+      <div class="logo" class="startLogo"></div>
+      <button class="rulesButton"
+      onclick="ToggleRulesScreen()">GAME RULES</button>
+    </div>
+  </div>
+  <div id="rulesScreen">
+    <h1>RULES</h1>
+    <span id="note">NOTE: DEPENDING ON YOUR SCREEN SIZE YOU MAY NEED TO ADJUST THE ZOOM LEVEL IN YOUR BROWSER ctl -/+</span>
+    <p>-CLICK HOLD AND DRAG TO CONTROL ROCKET DIRECTION AND SPEED<br>
+      -EACH CLICK USES FUEL AND WILL ENABLE PLAYER CONTROL FOR A LIMITED TIME<br>
+      -AVOID COLLISIONS AND COLLECT FUEL<br>
+      -3 COLLISIONS PER LEVEL <br>
+      -LEVEL ADVANCES EVERY 60 SECONDS<br>
+      -OBJECT OF THE GAME IS TO STAY ALIVE AS LONG AS POSSIBLE<br>
+    </p>
+    <div class="buttons">
+      <button class="startButton"
+      onclick="StartGame();">START GAME</button>
+      <div class="logo" class="startLogo"></div>
+      <button class="rulesButton"
+      onclick="ToggleRulesScreen();">BACK</button>
+    </div>
+  </div>
+  <div id="endScreen">
+    <div id="endStats"></div>
+    <button id="restartButton" onclick="StartGame();">PLAY AGAIN</button>
+  </div>
+  <div id = "HUD">
+    <div id = "score"></div>
+    <div class = "logo"></div>
+    <div id = "level"></div>
+  </div>
+  <div id= "background">
+    <img src="./assets/images/Background.png" alt="background" id="backgroundImg"> 
+  </div>
+  <canvas id="animationCanvas">BROWSER OUT OF DATE!</canvas>
+  <script src="./js/refuel.js"></script>
+  <script src="./js/projectile.js"></script>
+  <script src="./js/rocket.js"></script>
+  <script src="./js/blackhole.js"></script>
+  <script src="./js/app.js"></script>
+  <script id="startScreenTyper" src="js/startScreen.js"></script>
+</body>
+</html>
